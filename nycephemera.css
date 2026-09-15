@@ -1,0 +1,62 @@
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: auto;
+    background: #000000;
+    color: #FF4D6D;
+    font-size: 15px;
+}
+
+.nav-home {
+    color: #FFBD00 !important;
+}
+
+.main-nav {
+    font-size: 18px;
+}
+
+body, a, button {
+    cursor: url('cursor-pink.svg') 16 16, auto;
+}
+
+a, button, .project-nav a {
+    cursor: url('pointer2.svg') 8 16, pointer !important;
+}
+
+.nyce-page {
+    display: flex;
+    flex-direction: column;
+}
+
+.nyce-fullwidth {
+    width: 100%;
+}
+
+.nyce-fullwidth img,
+.nyce-fullwidth video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.nyce-intro {
+    padding: 4em var(--pad);
+    display: flex;
+    flex-direction: column;
+    gap: 2.5em;
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+.nyce-description {
+    font-size: 1.4em;
+    font-weight: 500;
+    line-height: 1.05;
+}
+
+.nyce-meta {
+    font-size: 1.4em;
+    font-weight: 500;
+    line-height: 1.05;
+    opacity: 0.5;
+}

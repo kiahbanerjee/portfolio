@@ -168,6 +168,30 @@ a, button, .project-nav a {
     line-height: 1.5;
 }
 
+.bos-stacked-videos {
+    display: flex;
+    flex-direction: column;
+    gap: 6em;
+    max-width: 60%;
+    margin: 4em auto;
+}
+
+.bos-video-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
+}
+
+.bos-video-item .bos-caption {
+    opacity: 1;
+}
+
+.bos-stacked-videos video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 .bos-detail {
     padding: 4em var(--pad);
     display: flex;
