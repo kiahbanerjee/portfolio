@@ -110,6 +110,16 @@ a, button, .project-nav a {
     text-align: center;
 }
 
+.bos-centered-text a {
+    color: #FFBD00;
+    text-decoration: none;
+}
+
+.bos-centered-text a:hover {
+    text-decoration: underline dotted;
+    text-underline-offset: 4px;
+}
+
 .bos-fontbos {
     width: 85%;
     margin: 0 auto;
