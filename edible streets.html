@@ -71,28 +71,9 @@
     </main>
 
     <nav class="project-nav">
-        <a href="smwsl.html">&lt; back</a>
-        <a href="nycsm.html">next &gt;</a>
+        <a href="nycsm.html">&lt; back</a>
+        <a href="bos.html">next &gt;</a>
     </nav>
 
-    <script>
-        document.querySelector('.nav-home').addEventListener('click', () => {
-            sessionStorage.setItem('skipIntro', '1');
-        });
-
-        const container = document.getElementById('es-lines');
-        const spacing   = 10;
-        const pad       = 20;
-        const count     = Math.ceil((window.innerWidth - pad * 2) / spacing);
-
-        for (let i = 0; i < count; i++) {
-            const line = document.createElement('div');
-            line.className = 'vline';
-            line.style.animation  = 'none';
-            line.style.transform  = 'scaleY(1)';
-            line.style.opacity    = '1';
-            container.appendChild(line);
-        }
-    </script>
 </body>
 </html>
