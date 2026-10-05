@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Archive — Kiah Banerjee</title>
+    <title>Play — Kiah Banerjee</title>
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="archive.css">
@@ -14,105 +14,76 @@
     <nav class="main-nav">
         <a href="index.html" class="nav-home">Kiah Banerjee</a>
         <div class="nav-right">
-            <a href="archive.html">Archive</a>
+            <a href="archive.html">Play</a>
             <a href="cv.html">CV</a>
         </div>
     </nav>
 
-    <main class="archive-page">
+    <img id="archive-preview" class="archive-preview" src="" alt="">
 
-        <div class="archive-grid">
-            <div class="archive-item">
-                <div class="archive-dp">
-                    <img class="archive-dp-base" src="niw.png" alt="">
-                    <img class="archive-dp-hover" src="niw-1.png" alt="">
-                </div>
-                <p class="archive-label">Nothing is Wasted</p>
+    <main class="archive-page" id="archive-page">
+        <div class="archive-inner" id="archive-inner">
+
+            <div class="archive-track">
+                <img src="archive/niw.png" alt="">
+                <img src="archive/Volume control-1.png" alt="">
+                <img src="archive/bday-1.png" alt="">
+                <img src="archive/din.png" alt="">
+                <img src="archive/love-1.png" alt="">
+                <img src="archive/dp-1.png" alt="">
+                <img src="archive/lamp-1.png" alt="">
+                <img src="archive/co-1.png" alt="">
+                <img src="archive/etching.jpg" alt="">
             </div>
-            <div class="archive-item">
-                <div class="archive-thumb archive-thumb-swap">
-                    <img class="archive-img-base" src="Volume control.png" alt="">
-                    <img class="archive-img-hover" src="Volume control-1.png" alt="">
-                </div>
-                <p class="archive-label">Volume Controls</p>
-            </div>
-            <div class="archive-item">
-                <div class="archive-thumb archive-thumb-swap">
-                    <img class="archive-img-base" src="bday.png" alt="">
-                    <img class="archive-img-hover" src="bday-1.png" alt="">
-                </div>
-                <p class="archive-label">Birthday Animation</p>
-            </div>
-            <div class="archive-item">
-                <div class="archive-dp">
-                    <img class="archive-dp-base" src="din.png" alt="">
-                    <img class="archive-dp-hover" src="din-1.png" alt="">
-                </div>
-                <p class="archive-label">DIN: Type Specimen</p>
-            </div>
-            <div class="archive-item">
-                <div class="archive-thumb archive-thumb-swap">
-                    <img class="archive-img-base" src="love.png" alt="">
-                    <img class="archive-img-hover" src="love-1.png" alt="">
-                </div>
-                <p class="archive-label">Love</p>
-            </div>
-            <div class="archive-item">
-                <div class="archive-dp">
-                    <img class="archive-dp-base" src="dp.png" alt="">
-                    <img class="archive-dp-hover" src="dp-1.png" alt="">
-                </div>
-                <p class="archive-label">Dreamer's Palace</p>
-            </div>
-            <div class="archive-item">
-                <div class="archive-thumb archive-thumb-swap">
-                    <img class="archive-img-base" src="lamp.png" alt="">
-                    <img class="archive-img-hover" src="lamp-1.png" alt="">
-                </div>
-                <p class="archive-label">Deconstructed Shoe Lamp</p>
-            </div>
-            <div class="archive-item">
-                <div class="archive-thumb archive-thumb-swap">
-                    <img class="archive-img-base" src="co.png" alt="">
-                    <img class="archive-img-hover" src="co-1.png" alt="">
-                </div>
-                <p class="archive-label">Cake Off</p>
-            </div>
-            <div class="archive-item">
-                <div class="archive-thumb archive-thumb-swap">
-                    <img class="archive-img-base" src="wtww.png" alt="">
-                    <img class="archive-img-hover" src="wtww-1.png" alt="">
-                </div>
-                <p class="archive-label">Windows to What Was</p>
-            </div>
-            <div class="archive-item">
-                <div class="archive-thumb archive-thumb-swap">
-                    <img class="archive-img-base" src="curves.png" alt="">
-                    <img class="archive-img-hover" src="curves-1.png" alt="">
-                </div>
-                <p class="archive-label">Curves</p>
-            </div>
-            <div class="archive-item">
-                <div class="archive-thumb archive-thumb-swap">
-                    <img class="archive-img-base" src="run.png" alt="">
-                    <img class="archive-img-hover" src="run-1.png" alt="">
-                </div>
-                <p class="archive-label">Run</p>
-            </div>
-            <div class="archive-item">
-                <div class="archive-thumb archive-thumb-swap">
-                    <img class="archive-img-base" src="fading.png" alt="">
-                    <img class="archive-img-hover" src="fading-1.png" alt="">
-                </div>
-                <p class="archive-label">Fading</p>
-            </div>
+
         </div>
-
     </main>
 
     <script>
         document.querySelector('.nav-home').addEventListener('click', () => {
             sessionStorage.setItem('skipIntro', '1');
+        });
+
+        const page = document.getElementById('archive-page');
+        const inner = document.getElementById('archive-inner');
+        const original = document.querySelector('.archive-track');
+
+        const preview = document.getElementById('archive-preview');
+
+        inner.addEventListener('mouseover', (e) => {
+            if (e.target.tagName === 'IMG') {
+                preview.src = e.target.src;
+                preview.classList.add('visible');
+            }
+        });
+
+        inner.addEventListener('mouseout', (e) => {
+            if (e.target.tagName === 'IMG') {
+                preview.classList.remove('visible');
+            }
+        });
+
+        window.addEventListener('load', () => {
+            const trackH = original.offsetHeight;
+
+            // Clone until content is at least 8x the viewport height
+            while (inner.scrollHeight < window.innerHeight * 8) {
+                const clone = original.cloneNode(true);
+                clone.setAttribute('aria-hidden', 'true');
+                inner.appendChild(clone);
+            }
+
+            // Start one track-height from the top so scrolling up works too
+            page.scrollTop = trackH;
+
+            page.addEventListener('scroll', () => {
+                const maxScroll = page.scrollHeight - page.clientHeight;
+                if (page.scrollTop <= 0) {
+                    page.scrollTop += trackH;
+                } else if (page.scrollTop >= maxScroll - trackH) {
+                    page.scrollTop -= trackH;
+                }
+            });
         });
     </script>
 </body>

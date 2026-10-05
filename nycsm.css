@@ -60,7 +60,7 @@ a, button, .project-nav a {
     font-size: 1.4em;
     font-weight: 500;
     line-height: 1.05;
-    opacity: 0.5;
+    opacity: 1;
 }
 
 /* Detail / design text */
@@ -74,9 +74,10 @@ a, button, .project-nav a {
 }
 
 .nycsm-detail-label {
-    font-size: 1.25em;
+    font-size: 0.85em;
     font-weight: 500;
-    opacity: 0.5;
+    font-style: italic;
+    opacity: 1;
     margin-bottom: 0.8em;
 }
 

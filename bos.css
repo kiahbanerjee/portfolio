@@ -49,7 +49,9 @@ a, button, .project-nav a {
     max-width: 50%;
     margin: 4em auto;
     text-align: left;
-    line-height: 1.5;
+    font-size: 1.4em;
+    font-weight: 500;
+    line-height: 1.05;
 }
 
 .bos-carousel {
@@ -105,7 +107,7 @@ a, button, .project-nav a {
 
 .bos-caption {
     margin-top: 8px;
-    opacity: 0.5;
+    opacity: 1;
     font-size: 0.9em;
     text-align: center;
 }
@@ -151,7 +153,7 @@ a, button, .project-nav a {
     font-size: 1.4em;
     font-weight: 500;
     line-height: 1.05;
-    opacity: 0.5;
+    opacity: 1;
 }
 
 .bos-two-col {
@@ -175,7 +177,9 @@ a, button, .project-nav a {
 
 .bos-two-col-text {
     flex: 1;
-    line-height: 1.5;
+    font-size: 1.4em;
+    font-weight: 500;
+    line-height: 1.05;
 }
 
 .bos-stacked-videos {
@@ -212,9 +216,10 @@ a, button, .project-nav a {
 }
 
 .bos-detail-label {
-    font-size: 1.25em;
+    font-size: 0.85em;
     font-weight: 500;
-    opacity: 0.5;
+    font-style: italic;
+    opacity: 1;
     margin-bottom: 0.8em;
 }
 

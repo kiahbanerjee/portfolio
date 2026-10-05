@@ -39,6 +39,18 @@ a, button, .project-nav a {
     display: block;
 }
 
+.nyce-hero {
+    max-width: 60%;
+    margin: 0 auto;
+    padding-top: 80px;
+}
+
+.nyce-hero video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 .nyce-intro {
     padding: 4em var(--pad);
     display: flex;
@@ -58,5 +70,5 @@ a, button, .project-nav a {
     font-size: 1.4em;
     font-weight: 500;
     line-height: 1.05;
-    opacity: 0.5;
+    opacity: 1;
 }
