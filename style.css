@@ -64,8 +64,12 @@ body.home {
     transition: opacity 0.2s;
 }
 
+.main-nav a {
+    text-underline-offset: 4px;
+}
+
 .main-nav a:hover {
-    opacity: 0.5;
+    text-decoration: underline dotted;
 }
 
 /* ── Homepage ── */
