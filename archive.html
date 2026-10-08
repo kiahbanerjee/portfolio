@@ -19,71 +19,27 @@
         </div>
     </nav>
 
-    <img id="archive-preview" class="archive-preview" src="" alt="">
-
-    <main class="archive-page" id="archive-page">
-        <div class="archive-inner" id="archive-inner">
-
-            <div class="archive-track">
-                <img src="archive/niw.png" alt="">
-                <img src="archive/Volume control-1.png" alt="">
-                <img src="archive/bday-1.png" alt="">
-                <img src="archive/din.png" alt="">
-                <img src="archive/love-1.png" alt="">
-                <img src="archive/dp-1.png" alt="">
-                <img src="archive/lamp-1.png" alt="">
-                <img src="archive/co-1.png" alt="">
-                <img src="archive/etching.jpg" alt="">
-            </div>
-
+    <main class="archive-page">
+        <div class="video-row">
+            <video autoplay muted loop playsinline>
+                <source src="etching.MOV">
+            </video>
+            <div class="video-stack">
+                <div class="vimeo-embed">
+                    <iframe src="https://player.vimeo.com/video/1233957358?badge=0&amp;autopause=0&amp;autoplay=1&amp;muted=1&amp;loop=1&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="CAKE OFF"></iframe>
+                </div>
+                <div class="vimeo-embed">
+                    <iframe src="https://player.vimeo.com/video/1233958070?badge=0&amp;autopause=0&amp;autoplay=1&amp;muted=1&amp;loop=1&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Surprise!"></iframe>
+                </div>            </div>
         </div>
+        <video class="video-wide" autoplay muted loop playsinline>
+            <source src="Collage copy.mp4" type="video/mp4">
+        </video>
     </main>
 
     <script>
         document.querySelector('.nav-home').addEventListener('click', () => {
             sessionStorage.setItem('skipIntro', '1');
-        });
-
-        const page = document.getElementById('archive-page');
-        const inner = document.getElementById('archive-inner');
-        const original = document.querySelector('.archive-track');
-
-        const preview = document.getElementById('archive-preview');
-
-        inner.addEventListener('mouseover', (e) => {
-            if (e.target.tagName === 'IMG') {
-                preview.src = e.target.src;
-                preview.classList.add('visible');
-            }
-        });
-
-        inner.addEventListener('mouseout', (e) => {
-            if (e.target.tagName === 'IMG') {
-                preview.classList.remove('visible');
-            }
-        });
-
-        window.addEventListener('load', () => {
-            const trackH = original.offsetHeight;
-
-            // Clone until content is at least 8x the viewport height
-            while (inner.scrollHeight < window.innerHeight * 8) {
-                const clone = original.cloneNode(true);
-                clone.setAttribute('aria-hidden', 'true');
-                inner.appendChild(clone);
-            }
-
-            // Start one track-height from the top so scrolling up works too
-            page.scrollTop = trackH;
-
-            page.addEventListener('scroll', () => {
-                const maxScroll = page.scrollHeight - page.clientHeight;
-                if (page.scrollTop <= 0) {
-                    page.scrollTop += trackH;
-                } else if (page.scrollTop >= maxScroll - trackH) {
-                    page.scrollTop -= trackH;
-                }
-            });
         });
     </script>
 </body>

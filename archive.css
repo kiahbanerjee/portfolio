@@ -1,65 +1,88 @@
 body {
-    background: #ffffff;
-    color: #000000;
-    overflow: hidden;
+    background: #000000;
+    color: #ffffff;
+    min-height: 100vh;
 }
 
-.archive-preview {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: auto;
-    height: 100vh;
-    object-fit: contain;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    filter: blur(2px);
+body, a, button {
+    cursor: url('cursor-pink.svg') 16 16, auto;
 }
 
-.archive-preview.visible {
-    opacity: 0.9;
+a, button {
+    cursor: url('pointer2.svg') 8 16, pointer !important;
+}
+
+.nav-right a {
+    color: #FF4D6D;
 }
 
 .archive-page {
-    height: 100vh;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vw;
+    padding: 12.5vh var(--pad);
+}
+
+.video-row {
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    overflow-y: scroll;
-    scrollbar-width: none;
-    position: relative;
-    z-index: 2;
+    gap: 2vw;
 }
 
-.archive-page::-webkit-scrollbar {
-    display: none;
-}
-
-.archive-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.archive-track {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.4em;
-    padding: 0.4em 0;
-    width: 70px;
-}
-
-.archive-track img {
-    width: 100%;
-    height: auto;
+.archive-page video {
+    max-width: 45vw;
+    max-height: 75vh;
+    min-width: 0;
     display: block;
-    filter: grayscale(100%);
-    transition: filter 0.3s ease;
 }
 
-.archive-track img:hover {
-    filter: grayscale(0%);
+.video-stack {
+    width: min(45vw, 64vh);
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+}
+
+.vimeo-embed {
+    position: relative;
+    aspect-ratio: 16 / 9;
+}
+
+.vimeo-embed iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.archive-page .video-wide {
+    max-width: 100%;
+    max-height: 90vh;
+}
+
+@media (max-width: 600px) {
+    .archive-page {
+        padding-top: 80px;
+        gap: 16px;
+    }
+
+    .video-row {
+        min-height: 0;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .archive-page video {
+        max-width: 100%;
+        max-height: 60vh;
+    }
+
+    .video-stack {
+        width: 100%;
+        gap: 16px;
+    }
 }
