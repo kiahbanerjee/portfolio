@@ -59,9 +59,130 @@ a, button {
     border: 0;
 }
 
+/* Rows that pair a video with a carousel: tops lined up, same height */
+.video-row:has(.carousel) {
+    min-height: 0;
+    align-items: flex-start;
+}
+
+.archive-page .video-match {
+    height: 400px;
+    width: auto;
+}
+
 .archive-page .video-wide {
     max-width: 100%;
     max-height: 90vh;
+    margin: 0 auto;
+}
+
+.archive-item {
+    margin: 0;
+    max-width: 100%;
+}
+
+.archive-item:has(.video-wide) {
+    width: 100%;
+}
+
+.archive-caption {
+    margin: 8px 0 0;
+    font-size: 0.75em;
+    font-style: italic;
+    color: #FF4D6D;
+    text-align: center;
+}
+
+.video-hover {
+    position: relative;
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.video-hover,
+.video-hover * {
+    cursor: url('pointer2.svg') 8 16, pointer !important;
+}
+
+.video-hover video {
+    transition: opacity 0.3s;
+}
+
+.video-hover:hover video {
+    opacity: 0.3;
+}
+
+.video-hover-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FF4D6D;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.video-hover:hover .video-hover-text {
+    opacity: 1;
+}
+
+.carousel-row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2vw;
+}
+
+.carousel {
+    width: 320px;
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.4s ease;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+}
+
+.carousel-slide img,
+.archive-page .carousel-slide video {
+    width: 100%;
+    max-width: none;
+    max-height: none;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: 0.25em;
+    margin-top: 0.5em;
+}
+
+.carousel-prev, .carousel-next {
+    background: none;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    color: #FF4D6D;
+    padding: 6px 16px;
+    font-family: inherit;
+    font-size: 1em;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+    border-color: #FF4D6D;
 }
 
 @media (max-width: 600px) {
@@ -84,5 +205,23 @@ a, button {
     .video-stack {
         width: 100%;
         gap: 16px;
+    }
+
+    .carousel-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .carousel {
+        width: 100%;
+    }
+
+    .video-row:has(.carousel) {
+        align-items: center;
+    }
+
+    .archive-page .video-match {
+        height: auto;
     }
 }
