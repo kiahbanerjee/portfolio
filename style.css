@@ -221,9 +221,6 @@ body.home {
 }
 
 .project-label {
-    display: flex;
-    gap: 4px;
-    align-items: baseline;
     margin-top: 8px;
 }
 

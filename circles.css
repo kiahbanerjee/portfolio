@@ -1,0 +1,197 @@
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: auto;
+    background: #000000;
+    color: #FF4D6D;
+    font-size: 15px;
+}
+
+.nav-home {
+    color: #FFBD00 !important;
+}
+
+.main-nav {
+    font-size: 18px;
+}
+
+body, a, button {
+    cursor: url('cursor-pink.svg') 16 16, auto;
+}
+
+a, button, .project-nav a {
+    cursor: url('pointer2.svg') 8 16, pointer !important;
+}
+
+.circles-page {
+    display: flex;
+    flex-direction: column;
+    gap: 6em;
+    padding-bottom: 8em;
+}
+
+.circles-page img,
+.circles-page video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.circles-cover {
+    width: 100%;
+}
+
+/* Same column as the text, so boxes and text line up */
+.circles-column {
+    padding: 0 var(--pad);
+    max-width: 60%;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Text treatment shared with the other project pages */
+.circles-intro {
+    padding: 0 var(--pad);
+    display: flex;
+    flex-direction: column;
+    gap: 2.5em;
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+.circles-description,
+.circles-meta,
+.circles-detail-text {
+    font-size: 1.4em;
+    font-weight: 500;
+    line-height: 1.05;
+}
+
+.circles-detail {
+    padding: 0 var(--pad);
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+.circles-detail-label {
+    font-size: 0.85em;
+    font-weight: 500;
+    font-style: italic;
+    margin-bottom: 0.8em;
+}
+
+/* Photos cropped in from the sides, around the folded strips */
+.circles-pair {
+    display: flex;
+    justify-content: center;
+    gap: 8vw;
+}
+
+.circles-pair img {
+    width: 25vw;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+}
+
+.circles-centered {
+    width: 60%;
+    margin: 0 auto;
+}
+
+/* Sits further left than the text column */
+.circles-offset {
+    width: 52%;
+    margin-left: 5.5%;
+}
+
+/* Full width: the black around the spread blends into the page */
+.circles-wide {
+    width: 100%;
+}
+
+.circles-bleed-pair {
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    padding: 0 10%;
+    /* Pulled up into the black below the open spread */
+    margin-top: -4em;
+}
+
+.circles-bleed-pair > * {
+    min-width: 0;
+}
+
+/* Widths shared in proportion to each photo's shape (width ÷ height),
+   so both come out the same height */
+.circles-bleed-pair > :first-child {
+    flex: 1333 1 0;
+}
+
+.circles-bleed-pair > :last-child {
+    flex: 1167 1 0;
+}
+
+.circles-caption {
+    /* Sits 8px under the images, cancelling the page's 90px section gap */
+    margin-top: -82px;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+/* Grey boxes standing in for images and videos */
+.placeholder {
+    background: #D9D9D9;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1em;
+    font-size: 1.4em;
+    font-weight: 500;
+}
+
+.placeholder-video { aspect-ratio: 16 / 9; }
+.placeholder-tall { aspect-ratio: 2 / 5; }
+.placeholder-square { aspect-ratio: 1; }
+
+@media (max-width: 600px) {
+    .circles-page {
+        gap: 3em;
+    }
+
+    .circles-intro,
+    .circles-detail,
+    .circles-column {
+        max-width: none;
+    }
+
+    .circles-centered,
+    .circles-offset {
+        width: auto;
+        margin: 0 var(--pad);
+    }
+
+    .circles-pair img {
+        width: 44vw;
+    }
+
+    .circles-bleed-pair {
+        margin-top: 0;
+        flex-direction: column;
+        gap: 3em;
+        padding: 0 var(--pad);
+    }
+
+    .circles-bleed-pair > * {
+        width: 100%;
+    }
+
+    .circles-caption {
+        margin: 0 var(--pad);
+    }
+}
